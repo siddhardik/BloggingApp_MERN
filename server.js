@@ -13,6 +13,9 @@ const connectDB=require("./config/db");
 dotenv.config({path:'/'});
 // It is in root directory ,  we can skip {path:'/'}
 
+//router import
+const  usersRoutes=require ('./routes/userRoutes');
+
 
 
 
@@ -23,8 +26,11 @@ const app= express();
 //middleware
 app.use(cors());
 app.use(express.json()); //Note: 07 
-
 app.use(morgan('dev'));
+
+///routes 
+app.use('/api/v1/users', usersRoutes);
+
 
 
 
