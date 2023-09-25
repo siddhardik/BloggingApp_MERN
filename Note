@@ -1,0 +1,45 @@
+<!-- 01. API VS Rest API  -->
+
+The primary goal of API is to standardize data exchange between web services. Depending on the type of API, the choice of protocol changes. On the other hand, REST API is an architectural style for building web services that interact via an HTTP protocol.
+
+
+description: blog app Mern Stack                                
+entry point: (index.js) server.js                               
+test command:                                                   
+git repository: (https://github.com/siddhardik/BloggingApp_MERN.git)
+keywords: blog app Mern_Blogging_App
+author: Siddhartha Bhunia                                       
+license: (ISC)       
+
+02. 
+<!-- What is colors in NPM? -->
+JavaScript library for immutable color conversion and manipulation with support for CSS color strings. const color = Color('#7743CE'). alpha(0.5). lighten(0.5); 
+<!--  Print Colourful messgaes on console  by using colors library  -->
+
+03. morgan is a Node. js and Express middleware to log HTTP requests and errors, and simplifies the process. 
+
+04. cors => What is CORS and why it is used?
+Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos
+
+<!-- react and node server  two server handle by cors  -->
+
+
+05. dotenv What is the use of dotenv?
+
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env . Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+
+06. nodemon => server restarts automatically after once run 
+
+07. The express. json() function is a middleware function used in Express. js applications to parse incoming JSON data from HTTP requests, a standard format for data transmission in web servers. Suppose we have created an API that sends data in JSON format.
+
+08. What is Morgan (' Dev ')?
+Morgan is a popular HTTP logging library for Node. js. It is designed to be a simple and flexible tool for logging HTTP requests and responses in Node. js applications. Using Morgan, you can easily log requests made to your Node.
+
+
+
+
+
+
+
+ 
