@@ -1,0 +1,15 @@
+# use material UI instead of Bootstrap 
+
+https://mui.com/material-ui/getting-started
+
+To install => npm install @mui/material @emotion/react @emotion/styled
+PS S:\Project\BloggingApp_MERN\client> npm install @mui/material @emotion/react @emotion/styled
+
+
+<!-- rafce  -->
+
+For Routing install 
+PS S:\Project\BloggingApp_MERN\client> npm i react-router-dom
+
+
+
