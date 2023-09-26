@@ -11,5 +11,11 @@ PS S:\Project\BloggingApp_MERN\client> npm install @mui/material @emotion/react 
 For Routing install 
 PS S:\Project\BloggingApp_MERN\client> npm i react-router-dom
 
+For Global Context Use Redux Tookit 
 
+npm install @reduxjs/toolkit
+
+If you need React bindings:
+
+npm install react-redux
 
