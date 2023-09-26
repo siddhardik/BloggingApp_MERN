@@ -35,15 +35,25 @@ Dotenv is a zero-dependency module that loads environment variables from a .env 
 
 08. What is Morgan (' Dev ')?
 Morgan is a popular HTTP logging library for Node. js. It is designed to be a simple and flexible tool for logging HTTP requests and responses in Node. js applications. Using Morgan, you can easily log requests made to your Node.
-
+ <!-- 400 -->
 09. 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error
-
+<!-- 201  -->
 10. the 201 status code is returned in response to a POST request. A POST request is used to submit data to a server to create a new resource. The 201 status code indicates that the server has successfully processed the request, the new resource has been created and is now ready for interaction.
 
 11. What is bcrypt used for?
 Bcrypt is a valuable tool to use to hash and store passwords. Its major benefits include: Slow runtime. Bcrypt is a slow-functioning algorithm that takes time to create password hashes and requires time to decrypt them, significantly slowing hacker attempts to break the bcrypt hash.
 
+<!-- 200  -->
 12. The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default. The meaning of a success depends on the HTTP request method: GET : The resource has been fetched and is transmitted in the message body.
+
+<!-- 500 Internal Server Error -->
+12. 500 Internal Server Error
+
+<!-- 404 is a status code that tells a web user that a requested page is not available. -->
+13. 404 is a status code that tells a web user that a requested page is not available.
+
+
+
 
 
 

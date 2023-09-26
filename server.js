@@ -15,6 +15,7 @@ dotenv.config({path:'/'});
 
 //router import
 const  usersRoutes=require ('./routes/userRoutes');
+const  blogRoutes=require('./routes/blogRoutes');
 
 
 
@@ -30,6 +31,8 @@ app.use(morgan('dev'));
 
 ///routes 
 app.use('/api/v1/users', usersRoutes);
+app.use('/api/v1/blog', blogRoutes);
+
 
 
 
