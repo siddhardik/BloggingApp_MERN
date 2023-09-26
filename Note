@@ -52,7 +52,28 @@ Bcrypt is a valuable tool to use to hash and store passwords. Its major benefits
 <!-- 404 is a status code that tells a web user that a requested page is not available. -->
 13. 404 is a status code that tells a web user that a requested page is not available.
 
+14.  Explain Session 
+<!-- const session = await mongoose.startSession(); -->
 
+This line starts a new Mongoose session. Sessions in Mongoose are used to group database operations together, often within a transaction. A session is created and assigned to the session variable.
+<!-- session.startTransaction(); -->
+
+This line starts a database transaction within the session. A transaction is a sequence of one or more database operations that are treated as a single unit of work. If any operation within the transaction fails, all changes made within the transaction can be rolled back (undone).
+<!-- await newBlog.save({ session }); -->
+
+This line saves a new blog entry (newBlog) to the database. The { session } parameter is passed to the save method to indicate that this save operation is part of the current session and transaction.
+<!-- exisitingUser.blogs.push(newBlog); -->
+
+This line adds the newly created newBlog to an array of blogs belonging to an existing user (exisitingUser). This is a common pattern for associating blog entries with users.
+<!-- await exisitingUser.save({ session }); -->
+
+This line saves the exisitingUser object, which now includes the newly added blog entry, to the database. Like before, { session } is passed to the save method to ensure it's part of the same session and transaction.
+<!-- await session.commitTransaction(); -->
+
+This line commits the transaction. If all the database operations within the transaction were successful, this will save the changes to the database. If any operation failed, this line would not be reached, and the changes would be rolled back.
+<!-- await newBlog.save(); -->
+
+This line saves the newBlog entry to the database outside of the transaction. It's important to note that this save operation is not tied to the session or transaction started earlier. It's a separate save operation that will persist the blog entry regardless of the transaction's outcome.
 
 
 

@@ -83,7 +83,8 @@ exports.createBlogController = async (req, res) => {
 exports.updateBlogController = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, image } = req.body;
+    // const { title, description, image } = req.body;
+
     const blog = await blogModel.findByIdAndUpdate(
       id,
       { ...req.body },
@@ -98,13 +99,13 @@ exports.updateBlogController = async (req, res) => {
     console.log(error);
     return res.status(400).send({
       success: false,
-      message: "Error WHile Updating Blog",
+      message: "Error While Updating Blog",
       error,
     });
   }
 };
 
-//SIngle Blog
+//Single Blog
 exports.getBlogByIdController = async (req, res) => {
   try {
     const { id } = req.params;
@@ -130,11 +131,12 @@ exports.getBlogByIdController = async (req, res) => {
   }
 };
 
+
+
 //Delete Blog
 exports.deleteBlogController = async (req, res) => {
   try {
     const blog = await blogModel
-      // .findOneAndDelete(req.params.id)
       .findByIdAndDelete(req.params.id)
       .populate("user");
     await blog.user.blogs.pull(blog);
