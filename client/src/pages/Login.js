@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Box, Typography, TextField, Button } from "@mui/material";
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {authActions} from '../redux/store';
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   //State
   const [inputs, setInputs] = useState(
     {
@@ -50,6 +53,7 @@ const Login = () => {
       }).then(function (response) {
         console.log(response);
         if (response.data.success) {
+          dispatch(authActions.login())
           alert("User Logged In Successfully");
           //Redirect to home page 
           navigate("/");
@@ -99,7 +103,7 @@ const Login = () => {
           //   }
           // }
 
-          >Login 🙋‍♂️</Typography>
+          >Login🤷‍♂️</Typography>
           
           <TextField
             placeholder='Enter E-mail'

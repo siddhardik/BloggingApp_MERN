@@ -98,7 +98,7 @@ const Register = () => {
           //   }
           // }
 
-          >Register</Typography>
+          >🙋‍♂️Register ➕</Typography>
           <TextField
             placeholder='name'
             name="name"
