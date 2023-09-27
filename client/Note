@@ -19,3 +19,55 @@ If you need React bindings:
 
 npm install react-redux
 
+
+  
+          // To write css in Tag use sx={{}}
+          // To customize a specific part of a component, you can use the class name provided by Material UI inside the sx prop. 
+
+
+
+<!-- axios ~ -->
+https://www.npmjs.com/
+
+<!-- Promise based HTTP client for the browser and node.js -->
+
+npm i axios
+PS S:\Project\BloggingApp_MERN\client> npm i axios
+
+
+
+<!-- To run node and React Server together  -->
+PS S:\Project\BloggingApp_MERN\client> cd ../
+PS S:\Project\BloggingApp_MERN> npm i concurrently
+
+01.
+<!-- root folder package.json  backEnd Wala json -->
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js ",
+    "server": "nodemon server.js",
+    "client" : "npm start --prefix ./client",
+    "dev": " concurrently \"npm run server\" \"npm run client\" "
+  }
+
+ <!-- And Do   -->
+
+02.
+ Client Folder package.json 
+ 
+ // At the beginning of the object after name property 
+  "name": "client",
+  "proxy":"http://localhost:8080",
+
+
+//After Run 
+S:\Project\BloggingApp_MERN>npm run dev
+
+> bloggingapp_mern@1.0.0 dev
+> concurrently "npm run server" "npm run client"
+
+<!-- In browser react 3000 will be open  -->
+
+
+<!-- Axios: -->
+Axios: Axios is a Javascript library used to make HTTP requests from node. js or XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6. It can be used intercept HTTP requests and responses and enables client-side protection against XSRF
