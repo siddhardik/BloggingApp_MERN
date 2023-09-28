@@ -4,6 +4,7 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {authActions} from '../redux/store';
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const Login = () => {
         if (response.data.success) {
           localStorage.setItem('userId',response.data?.user._id);
           dispatch(authActions.login())
-          alert("User Logged In Successfully");
+          toast.success("User Logged In Successfully");
           //Redirect to home page 
           navigate("/");
         } else {

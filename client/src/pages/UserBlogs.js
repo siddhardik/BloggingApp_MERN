@@ -20,26 +20,27 @@ const UserBlogs = () => {
     useEffect(() => {
         getUserBlogs();
     }, []);
+    
     console.log(blogs);
     return (
         <div>
-            {blogs && blogs.length > 0 ? (
-                blogs.map((blog) => (
-                    <BlogCard
-                        id={blog._id}
-                        isUser={true}
-                        title={blog.title}
-                        description={blog.description}
-                        image={blog.image}
-                        username={blog.user.username}
-                        time={blog.createdAt}
-                    />
-                ))
-            ) : (
-                <h1>You Havent Created a blog</h1>
-            )}
+          {blogs && blogs.length > 0 ? (
+            blogs.map((blog) => (
+              <BlogCard
+                key={blog._id} // Make sure to add a unique key when rendering a list of elements
+                isUser={true}
+                title={blog.title}
+                description={blog.description}
+                image={blog.image}
+                username={blog.user.username}
+                time={blog.createdAt}
+              />
+            ))
+          ) : (
+            <h1 style={{ textAlign: 'center', color: 'cyan' , marginTop :'80px'}}>You Haven't Created a Blog</h1>
+          )}
         </div>
-    );
+      );
 };
 
 export default UserBlogs;

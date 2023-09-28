@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Box, Typography, TextField, Button } from "@mui/material";
 import axios from 'axios';
+import toast from 'react-hot-toast'
 
 const Register = () => {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const Register = () => {
       }).then(function (response) {
         console.log(response);
         if (response.data.success) {
-          alert("User Registered Successfully");
+          toast.success("User Registered Successfully");
           navigate("/login");
         } else {
           alert("User registration failed.");
@@ -98,7 +99,7 @@ const Register = () => {
           //   }
           // }
 
-          >🙋‍♂️Register ➕</Typography>
+          >🙋‍♂️Register➕</Typography>
           <TextField
             placeholder='name'
             name="name"

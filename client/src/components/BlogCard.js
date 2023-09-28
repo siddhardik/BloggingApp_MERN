@@ -10,8 +10,10 @@ import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-// import toast from "react-hot-toast";
- import axios from "axios";
+// import toast from "react-hot-toast"
+import moment from 'moment';
+
+import axios from "axios";
 
 export default function BlogCard({
   title,
@@ -41,19 +43,21 @@ export default function BlogCard({
   return (
     <Card
       sx={{
-        width: "40%",
-        margin: "auto",
+        width: '100%', // Adjust the width as needed for responsiveness
+        maxWidth: '400px', // Set the maximum width as desired
+        margin: 'auto',
         mt: 2,
         padding: 2,
-        boxShadow: "5px 5px 10px #ccc",
-        ":hover:": {
-          boxShadow: "10px 10px 20px #ccc",
+        boxShadow: '5px 5px 10px #ccc',
+        transition: 'box-shadow 0.3s', // Add a transition for hover effect
+        '&:hover': {
+          boxShadow: '10px 10px 20px #ccc',
         },
       }}
     >
       {isUser && (
-        <Box display={"flex"}>
-          <IconButton onClick={handleEdit} sx={{ marginLeft: "auto" }}>
+        <Box display="flex" justifyContent="flex-end">
+          <IconButton onClick={handleEdit}>
             <ModeEditIcon color="info" />
           </IconButton>
           <IconButton onClick={handleDelete}>
@@ -64,19 +68,26 @@ export default function BlogCard({
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {username}
+            {username?.charAt(0)} {/* Display the first character of the username */}
           </Avatar>
         }
         title={username}
-        subheader={time}
+        subheader={moment(time).format("Do MMMM YYYY, hh:mm A")}
       />
-      <CardMedia component="img" maxHeight="300" height="auto" image={image} alt="Blog Related Image" />
+      <CardMedia
+        component="img"
+        width="100%" // Adjust the width for responsiveness
+        height="auto" // Allow the height to adjust based on the aspect ratio
+        style={{ objectFit: 'cover' }} // Use style instead of minWidth and object-fit
+        src={image}
+        alt="Blog Related Image"
+      />
       <CardContent>
-        <Typography variant="h6" color="text.secondary">
-          Title : {title}
+        <Typography variant="h6" color="textSecondary">
+          Title: {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Description : {description}
+        <Typography variant="body2" color="textSecondary">
+          Description: {description}
         </Typography>
       </CardContent>
     </Card>
