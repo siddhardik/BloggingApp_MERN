@@ -53,6 +53,7 @@ const Login = () => {
       }).then(function (response) {
         console.log(response);
         if (response.data.success) {
+          localStorage.setItem('userId',response.data?.user._id);
           dispatch(authActions.login())
           alert("User Logged In Successfully");
           //Redirect to home page 
