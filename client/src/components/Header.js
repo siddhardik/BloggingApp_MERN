@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, AppBar, Toolbar, Button, Typography, Tabs, Tab } from '@mui/material';
 import { Link ,useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import {authActions} from "../redux/store"
-import toast from 'react-hot-toast'
+import {authActions} from "../redux/store";
+import toast from 'react-hot-toast';
 const Header = () => {
     // Global State
     let isLogin = useSelector(state => state.isLogin);
@@ -26,7 +26,7 @@ const Header = () => {
             console.log("Error: " + err)
         }
     }
-    
+
     return (
         <AppBar position='sticky'>
             <Toolbar>
