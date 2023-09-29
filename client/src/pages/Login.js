@@ -55,6 +55,7 @@ const Login = () => {
         console.log(response);
         if (response.data.success) {
           localStorage.setItem('userId',response.data?.user._id);
+          localStorage.setItem('userName',response.data?.user.username);
           dispatch(authActions.login())
           toast.success("User Logged In Successfully");
           //Redirect to home page 
