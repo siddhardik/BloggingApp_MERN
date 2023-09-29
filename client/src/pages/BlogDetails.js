@@ -5,11 +5,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 const BlogDetails = () => {
   const [blog, setBlog] = useState({});
+  const [ownerId, setOwnerId]=useState({});
   const id = useParams().id;
+  console.log("id inside BlogDetails"+ id );
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
   // get blog details
   const getBlogDetail = async () => {
+   
     try {
       const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
       if (data?.success) {
@@ -19,6 +22,9 @@ const BlogDetails = () => {
           description: data?.blog.description,
           image: data?.blog.image,
         });
+
+        // Get Post owner id
+          setOwnerId(data?.blog.user);
       }
     } catch (error) {
       console.log(error);
@@ -44,10 +50,20 @@ const BlogDetails = () => {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,
-        user: id,
+        user: ownerId
       });
       if (data?.success) {
-        toast.success("Blog Updated");
+        toast.success('Blog has been Updated.', {
+          style: {
+            border: '1px solid #713200',
+            padding: '16px',
+            color: '#713200',
+          },
+          iconTheme: {
+            primary: '#713200',
+            secondary: '#FFFAEE',
+          },
+        });
         navigate("/my-blogs");
       }
     } catch (error) {
@@ -76,7 +92,7 @@ const BlogDetails = () => {
             padding={3}
             color="gray"
           >
-            Update A Pots
+            Update this post
           </Typography>
           <InputLabel
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}

@@ -39,7 +39,7 @@ exports.createBlogController = async (req, res) => {
     if (!title || !description || !image || !user) {
       return res.status(400).send({
         success: false,
-        message: "Please Provide ALl Fields",
+        message: "Please Provide All Fields",
       });
     }
     const exisitingUser = await userModel.findById(user);
@@ -169,7 +169,7 @@ exports.userBlogControlller = async (req, res) => {
     return res.status(200).send({
       success: true,
       message: "user blogs",
-      userBlog,
+      userBlog
     });
   } catch (error) {
     console.log(error);

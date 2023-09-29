@@ -8,9 +8,9 @@ import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, tableSortLabelClasses } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-// import toast from "react-hot-toast"
+import toast from "react-hot-toast"
 import moment from 'moment';
 
 import axios from "axios";
@@ -22,8 +22,17 @@ export default function BlogCard({
   username,
   time,
   id,
-  isUser,
+  isUser
 }) {
+  console.log("isUser Value: " +isUser);
+  console.log("After Accepting props" + title,
+    description,
+    image,
+    username,
+    time,
+    id,
+    isUser);
+
   const navigate = useNavigate();
   const handleEdit = () => {
     navigate(`/blog-details/${id}`);
@@ -33,7 +42,9 @@ export default function BlogCard({
     try {
       const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`);
       if (data?.success) {
-        alert("Blog Deleted");
+        toast('Blog Deleted!', {
+          icon: '❌',
+        });
         window.location.reload();
       }
     } catch (error) {

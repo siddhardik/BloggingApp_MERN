@@ -60,15 +60,15 @@ const Login = () => {
           //Redirect to home page 
           navigate("/");
         } else {
-          alert("User Login failed.");
+          toast.error("Email or password is incorret");
         }
       }).catch(function (error) {
         console.log("Error:", error.message);
-        alert("An error occurred Login.");
+        toast.error("An error occurred Login.");
       });
     } catch (error) {
       console.log("Try-catch block error:", error.message);
-      alert("An error occurred.");
+      toast.error("An error occurred.");
     }
 
   }
