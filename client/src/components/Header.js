@@ -19,13 +19,14 @@ const Header = () => {
             dispatch(authActions.logout());
             toast.success("You have been logged out");
             localStorage.clear();
-            navigate('/login')
+            navigate('/login');
 
         }
         catch(err){
             console.log("Error: " + err)
         }
     }
+    
     return (
         <AppBar position='sticky'>
             <Toolbar>

@@ -94,10 +94,10 @@ export default function BlogCard({
         alt="Blog Related Image"
       />
       <CardContent>
-        <Typography variant="h6" color="textSecondary">
+        <Typography variant="h6" color="black">
           Title: {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="blue">
           Description: {description}
         </Typography>
       </CardContent>
