@@ -21,10 +21,10 @@ const UserBlogs = () => {
         getUserBlogs();
     }, []);
     
-    console.log("After getting from database : " + blogs);
+    // console.log("After getting from database : " + blogs);
     
       blogs.map((blog) => {
-        console.log(blog._id ,blog.title,blog?.user.username);
+        // console.log(blog._id ,blog.title,blog?.user.username);
       } 
       );
 

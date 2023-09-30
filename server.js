@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path'); 
 
 const cors = require('cors');
 const morgan = require('morgan');
@@ -33,8 +34,17 @@ app.use(morgan('dev'));
 app.use('/api/v1/users', usersRoutes);
 // /api/v1/user => /api/v1/users
 app.use('/api/v1/blog', blogRoutes);
+app.use('/', blogRoutes)
 
 
+//Static Files
+
+app.use(express.static(path.join(__dirname, './client/build')));
+app.get('*', function(req,res){
+    
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+}
+)
 
 
 
@@ -48,5 +58,5 @@ const PORT = process.env.PORT || 8080;
 //listen 
 
 app.listen(PORT,()=>{
-    console.log(`Server listening on ${process.env.DEV_MODE} port ${PORT}`.bgMagenta.black);
+    // console.log(`Server listening on ${process.env.DEV_MODE} port ${PORT}`.bgMagenta.black);
 })

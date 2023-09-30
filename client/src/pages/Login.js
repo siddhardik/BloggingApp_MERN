@@ -52,7 +52,7 @@ const Login = () => {
         email: inputs.email,
         password: inputs.password
       }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.data.success) {
           localStorage.setItem('userId',response.data?.user._id);
           localStorage.setItem('userName',response.data?.user.username);
@@ -64,11 +64,11 @@ const Login = () => {
           toast.error("Email or password is incorret");
         }
       }).catch(function (error) {
-        console.log("Error:", error.message);
+        // console.log("Error:", error.message);
         toast.error("An error occurred Login.");
       });
     } catch (error) {
-      console.log("Try-catch block error:", error.message);
+      // console.log("Try-catch block error:", error.message);
       toast.error("An error occurred.");
     }
 

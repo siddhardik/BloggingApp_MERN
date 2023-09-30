@@ -12,7 +12,7 @@ const Blogs = () => {
       // if(data && data.success) 
       if(data?.success){
         setBlogs(data?.blogs);
-        console.log("get All Blogs Resonse :"  +data.blogs)
+        // console.log("get All Blogs Resonse :"  +data.blogs)
       }
 
     }

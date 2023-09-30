@@ -39,7 +39,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
+    // console.log(inputs);
 
     inputClear();
 
@@ -49,7 +49,7 @@ const Register = () => {
         email: inputs.email,
         password: inputs.password
       }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.data.success) {
           toast.success("User Registered Successfully");
           navigate("/login");
@@ -57,11 +57,11 @@ const Register = () => {
           alert("User registration failed.");
         }
       }).catch(function (error) {
-        console.log("Error:", error.message);
+        // console.log("Error:", error.message);
         alert("An error occurred during registration.");
       });
     } catch (error) {
-      console.log("Try-catch block error:", error.message);
+      // console.log("Try-catch block error:", error.message);
       alert("An error occurred.");
     }
 

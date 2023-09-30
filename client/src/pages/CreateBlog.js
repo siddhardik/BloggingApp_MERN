@@ -26,7 +26,7 @@ const CreateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("User ka id before create post :" +id );
+      // console.log("User ka id before create post :" +id );
       const { data } = await axios.post("/api/v1/blog/create-blog", {
         title: inputs.title,
         description: inputs.description,
