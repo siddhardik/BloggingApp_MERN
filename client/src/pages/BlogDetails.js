@@ -64,7 +64,7 @@ const BlogDetails = () => {
             secondary: '#FFFAEE',
           },
         });
-        navigate("/my-blogs");
+        navigate("/blogs");
       }
     } catch (error) {
       console.log(error);
