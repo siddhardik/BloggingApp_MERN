@@ -38,7 +38,7 @@ const app = express();
 app.use(express.json()); //Note: 07 
 app.use(morgan('dev'));
 
-app.options('*', cors(corsOptions));
+// app.options('*', cors(corsOptions));
 
 ///routes 
 app.use('/api/v1/users', usersRoutes);
