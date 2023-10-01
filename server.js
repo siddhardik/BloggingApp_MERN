@@ -20,13 +20,13 @@ const blogRoutes = require('./routes/blogRoutes');
 
 //Cors 
 
-const corsOptions = {
-    origin: 'https://localhost:3000', // Replace with your frontend URL
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Enable cookies, if needed
-  };
+// const corsOptions = {
+//     origin: 'https://localhost:3000', // Replace with your frontend URL
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true, // Enable cookies, if needed
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
 
 
 
@@ -34,7 +34,7 @@ const corsOptions = {
 const app = express();
 
 //middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json()); //Note: 07 
 app.use(morgan('dev'));
 
@@ -46,14 +46,16 @@ app.use('/api/v1/users', usersRoutes);
 app.use('/api/v1/blog', blogRoutes);
 
 
-//Static Files
 
-app.use(express.static(path.join(__dirname, './client/build')));
+
+// Serve static files from the 'client/build' directory
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Define a route handler for all routes (catch-all)
 app.get('*', function (req, res) {
-
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
-}
-)
+    // Serve the 'index.html' file for all routes
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 
 
